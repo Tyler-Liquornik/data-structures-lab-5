@@ -1,0 +1,31 @@
+Note to whoever is grading this project:
+
+I'd like to provide 3 key insights into my design process for this project.
+
+One of the primary challenges I encountered was maintaining user awareness of the data stored within the program.
+This involved conveying information about each passenger's details, the layout of the plane,
+the allocation of seats, and the queue of passengers waiting to board. To address this challenge,
+I included features that allow the user to check who is waiting to board and the current status of the plane,
+which enhances the user experience and clarity of the program.
+
+Another complex aspect of this project was selecting appropriate data structures.
+The constraint of only using linear data structures ruled out the straightforward use of priority queues since they
+are implemented using (non-linear) heaps, which might have been a natural choice due to passengers having different
+priorities affecting their position in the boarding queue. To work around this,
+I essentially aimed to implement a priority queue using a linked list.
+The list is dynamically sorted using the .sort method with a custom comparator.
+I aimed to optimize this process by sorting the list only when the information was requested,
+rather than continuously seeking the correct position or sorting during each passenger's insertion into the list.
+This decision was made to enhance the efficiency of the program.
+
+Finally, the last thing I had in mind while designing this program was exception handling. With many options
+the user can choose, every combination of inputs causes the control flow of the code to skew slightly
+differently, and I wanted to ensure no cases threw errors or caused logical conflicts that made no sense. I aimed
+to minimize throwing exceptions as much as possible. In a few places, I threw/caught RunTimeExceptions, which
+I thought were broad enough to capture all the possible exceptions but specific enough to
+be a little more efficient so that the compiler wouldn't have to go look all the way up to Exception.
+
+I hope this helps to specify why I made some of the design choices that I did.
+
+Thank you for considering this extra documentation,
+Tyler Liquornik
